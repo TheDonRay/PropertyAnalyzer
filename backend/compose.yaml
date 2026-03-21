@@ -8,11 +8,11 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  server: 
+  propertyrentapi: 
     build:
       context: .
     environment:
       NODE_ENV: production 
-      PORT: 8990
+      PORT: ${PORT}
     ports:
       - 8990:8990
