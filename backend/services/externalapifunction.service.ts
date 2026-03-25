@@ -6,7 +6,7 @@ const externalapifunction = async (Address: clientAddress) => {
   // handle cases here create try and catch case as such
   try {
     // research better way to validate addresses.
-    if (!Address || Address.UserAddress.length === 0) {
+    if (!Address) {
       throw new Error("Error no address entered");
     }
     console.log("Address entered");
@@ -24,4 +24,4 @@ const externalapifunction = async (Address: clientAddress) => {
   }
 };
 
-export default { externalapifunction };
+export default externalapifunction;
