@@ -15,13 +15,23 @@ const externalapifunction = async (Address: clientAddress) => {
       address: Address.UserAddress,
     }); 
 
-    const address = buildingURL.get('address'); 
+    const externalapiURL = `https://api.rentcast.io/v1/properties?address=${buildingURL}`; 
+    console.log('external call was successful, next up fetching your data');  
+    //this fetch is going to be a get request to actually call the data 
+    const propertydatafetch = await fetch(externalapiURL); 
+  
+    console.log('Fetching property data was successful'); 
 
-    const externalapiURL = `https://api.rentcast.io/v1/properties?address=${address}`;
-    console.log(externalapiURL); // just to check if we are correcting getting the right URL. 
-    return;
+    const propertyData = await propertydatafetch.json();  
+
+    if (!propertyData){ 
+      throw new Error('No property data recieved for given address user entered'); 
+    } 
+    console.log('Property data was found, retrieving now');  
+    return propertyData; 
+
   } catch (error) {
-    console.error("Error", error);
+    console.error("Error calling external function", error);
     return;
   }
 };
