@@ -6,7 +6,8 @@ steps:
     args: [
       'build',
       '-t', 'us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:$COMMIT_SHA',
-      '.'
+      '-f', 'backend/Dockerfile',
+      './backend'
     ]
 
 images:
