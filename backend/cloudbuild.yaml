@@ -1,0 +1,13 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:$COMMIT_SHA',
+      '.'
+    ]
+
+images:
+  - 'us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:$COMMIT_SHA'
