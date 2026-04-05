@@ -42,7 +42,7 @@ const externalapifunction = async (Address: clientAddress) => {
   }
 };
 
-// this serves as a helper function here. 
+// this serves as a helper function here.
 const getLastNYears = (
   obj: Record<string, any>,
   n: number,

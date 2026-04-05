@@ -14,7 +14,7 @@ steps:
         "-f", 
         "backend/Dockerfile",
         "./backend"
-      ], 
+      ]
   #step 2: use docker to actually push the image we created 
   - name: "gcr.io/cloud-builders/docker" 
     args: 
@@ -22,7 +22,7 @@ steps:
       "push", 
       "--all-tags", 
       "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi"
-    ], 
+    ] 
     #step 3: Deploy everything to cloud run here 
   - name: "gcr.io/cloud-builders/gcloud" 
     args: 
