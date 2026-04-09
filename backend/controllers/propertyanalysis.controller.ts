@@ -38,8 +38,8 @@ const PropertyAnalysisController = async (Address : clientAddress, req: Request,
         } 
         return res.status(200).send(`Data Successfully Analyzed here's what we think about the property based of the data provided: ${aiPropertyAnalysis}`); 
     } catch (error) { 
-        
+        return res.status(500).send('Error getting organized Data payload and AI analysis'); 
     }
-}
+}; 
 
 export default PropertyAnalysisController; 
