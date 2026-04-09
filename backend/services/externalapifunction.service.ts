@@ -73,7 +73,7 @@ const organizedData = async (Address: clientAddress) => {
       SquareFootage: data.squareFootage,
       LotSize: data.lotSize,
       YearBuilt: data.yearBuilt,
-      LegalDescription: data.legalDescription, 
+      LegalDescription: data.legalDescription,
       LastSaleDate: data.lastSaleDate,
       LastSalePrice: data.lastSalePrice,
       History: data.history,

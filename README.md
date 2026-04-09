@@ -2,12 +2,12 @@
 
 A backend REST API designed to help analyze property data based on clientele data and what a customer is looking for. By typing in an address, users can retrieve detailed information about a specific property — from high-level details like property type all the way down to when the property was set to offset.
 
-
 ## Overview
 
 The Property Data Analyzer API enables users to query detailed property information by simply providing an address. The API aggregates and analyzes data from external sources, leveraging AI to surface meaningful insights tailored to each client's needs.
 
 **Key capabilities:**
+
 - Look up a property by address
 - Retrieve structured property details (type, size, lot info, offset dates, and more)
 - AI-assisted data analysis via OpenAI
@@ -17,15 +17,15 @@ The Property Data Analyzer API enables users to query detailed property informat
 
 ## Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| **TypeScript** | Type-safe backend development |
-| **Node.js** | JavaScript runtime environment |
-| **Express.js** | REST API framework |
-| **OpenAI API** | AI-powered property data analysis |
-| **RentCast API** | Property and rental market data |
-| **Docker** | Containerization |
-| **GCP Cloud Run** | Serverless container deployment |
+| Technology        | Purpose                           |
+| ----------------- | --------------------------------- |
+| **TypeScript**    | Type-safe backend development     |
+| **Node.js**       | JavaScript runtime environment    |
+| **Express.js**    | REST API framework                |
+| **OpenAI API**    | AI-powered property data analysis |
+| **RentCast API**  | Property and rental market data   |
+| **Docker**        | Containerization                  |
+| **GCP Cloud Run** | Serverless container deployment   |
 
 ---
 
@@ -89,7 +89,6 @@ npm run dev
 npm run build
 npm start
 ```
-
 
 ## Contributing
 

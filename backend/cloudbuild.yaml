@@ -1,31 +1,31 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 
-steps: 
-  #step 1: build the docker image here 
+steps:
+  #step 1: build the docker image here
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
         "build",
         "-t",
         "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:$COMMIT_SHA",
-        "-t", 
-        "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:latest", 
-        "-f", 
+        "-t",
+        "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:latest",
+        "-f",
         "backend/Dockerfile",
-        "./backend"
+        "./backend",
       ]
-  #step 2: use docker to actually push the image we created 
-  - name: "gcr.io/cloud-builders/docker" 
-    args: 
-      [ 
-        "push", 
-        "--all-tags", 
-        "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi"
-      ] 
-    #step 3: Deploy everything to cloud run here 
-  - name: "gcr.io/cloud-builders/gcloud" 
-    args: 
+  #step 2: use docker to actually push the image we created
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "--all-tags",
+        "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi",
+      ]
+    #step 3: Deploy everything to cloud run here
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
       [
         "run",
         "deploy",
@@ -36,11 +36,11 @@ steps:
         "us-central1",
         "--platform",
         "managed",
-        "--allow-unauthenticated"
+        "--allow-unauthenticated",
       ]
 
 images:
- # Tag 1: Specific commit version
-  - "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:$COMMIT_SHA" 
-  #tag 2: Latest version ( moving tag) 
+  # Tag 1: Specific commit version
+  - "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:$COMMIT_SHA"
+  #tag 2: Latest version ( moving tag)
   - "us-central1-docker.pkg.dev/propertyapi-491802/propertyanalysisapi/propertyapi:latest"
