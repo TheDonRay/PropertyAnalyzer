@@ -98,6 +98,8 @@ npm start
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Open a Pull Request
 
----
+--- 
+
+For analysis route make sure you put query parameter as analysis?UserAddress= user address to get the analysis. 
 
 > Built with TypeScript, Node.js, Express, OpenAI, RentCast, Docker, and GCP Cloud Run.
